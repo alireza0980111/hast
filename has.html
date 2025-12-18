@@ -1,0 +1,218 @@
+    <!DOCTYPE html>
+    <html lang="fa" dir="rtl">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday 🎉</title>
+
+    <!-- فونت فارسی -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Vazirmatn', sans-serif;
+        }
+
+        body {
+        min-height: 100vh;
+        background: radial-gradient(circle at top, #0ff, #020b14 60%, #000);
+        color: #e6ffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        }
+
+        .card {
+        background: rgba(0, 0, 0, 0.55);
+        border: 1px solid rgba(0, 255, 255, 0.4);
+        box-shadow:
+            0 0 20px rgba(0, 255, 255, 0.5),
+            inset 0 0 15px rgba(0, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 40px 30px;
+        text-align: center;
+        width: 90%;
+        max-width: 420px;
+        max-height: 80vh;
+        overflow-y: auto;
+        backdrop-filter: blur(6px);
+        z-index: 10;
+        }
+
+        /* ===== عنوان ===== */
+        h1 {
+        font-size: 2.2rem;
+        margin-bottom: 25px;
+        color: #eaffff;
+        line-height: 1.4;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: titleFade 1.6s ease forwards,
+                    glow 2.5s infinite alternate 1.6s;
+        }
+
+        h1 .name {
+        display: block;
+        font-size: 2.6rem;
+        margin-top: 10px;
+        color: #00ffff;
+        text-shadow:
+            0 0 10px #00ffff,
+            0 0 25px #00e5ff,
+            0 0 45px #00ffff;
+        }
+
+        @keyframes titleFade {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        }
+
+        @keyframes glow {
+        from {
+            text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #00e5ff;
+        }
+        to {
+            text-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff, 0 0 40px #00ffff;
+        }
+        }
+
+        /* ===== دکمه ===== */
+        button {
+        background: transparent;
+        color: #cfffff;
+        border: 2px solid #0ff;
+        padding: 12px 28px;
+        font-size: 1rem;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+        }
+
+        button:hover {
+        background: #0ff;
+        color: #000;
+        box-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+        transform: scale(1.05);
+        }
+
+        /* ===== نامه ===== */
+        .letter {
+        display: none;
+        margin-top: 25px;
+        font-size: 1rem;
+        line-height: 1.9;
+        color: #e8ffff;
+        text-shadow: 0 0 5px rgba(0, 255, 255, 0.4);
+        }
+
+        /* ===== بادکنک ===== */
+        .balloon {
+        position: absolute;
+        bottom: -120px;
+        width: 40px;
+        height: 55px;
+        border-radius: 50% 50% 45% 45%;
+        background: radial-gradient(circle at 30% 30%, #eaffff, #00cfd1);
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+        animation: floatUp linear infinite;
+        opacity: 0.8;
+        }
+
+        .balloon::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        width: 2px;
+        height: 20px;
+        background: #9ff;
+        }
+
+        @keyframes floatUp {
+        to {
+            transform: translateY(-120vh);
+        }
+        }
+
+        /* ===== فشفشه ===== */
+        .spark {
+        position: absolute;
+        bottom: -10px;
+        width: 6px;
+        height: 6px;
+        background: #00ffff;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #0ff;
+        animation: sparkUp linear infinite;
+        }
+
+        @keyframes sparkUp {
+        to {
+            transform: translateY(-100vh) scale(0.2);
+            opacity: 0;
+        }
+        }
+    </style>
+    </head>
+
+    <body>
+
+    <div class="card">
+        <h1>
+        🎂 Happy Birthday 🎂<br><br>
+        <span class="name">Hasti</span> 
+        </h1>
+
+        <button onclick="showLetter()">باز کردن پیام</button>
+
+        <div class="letter" id="letter">
+        هستی عزیز، ممنونم که این مدت کنارم بودی و باهام رفاقت <br>
+        واقعاً قدردان حضورت هستم.<br><br>
+
+        می‌دونم مسیرت آسون نبوده و سختی‌های زیادی کشیدی،
+        ولی یادت باشه آدم‌های قوی دقیقاً توی همین روزهای سخت ساخته می‌شن.
+        ادامه بده، ناامید نشو و به خودت ایمان داشته باش ✨<br><br>
+
+        دوباره از ته دل میگم:<br>
+        🎉 تولدت مبارک هستی 🎉<br><br>
+        علی 
+        </div>
+    </div>
+
+    <script>
+        function showLetter() {
+        const letter = document.getElementById('letter');
+        letter.style.display = 'block';
+        letter.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // بادکنک‌ها
+        for (let i = 0; i < 15; i++) {
+        const b = document.createElement('div');
+        b.className = 'balloon';
+        b.style.left = Math.random() * 100 + 'vw';
+        b.style.animationDuration = 8 + Math.random() * 6 + 's';
+        b.style.animationDelay = Math.random() * 5 + 's';
+        document.body.appendChild(b);
+        }
+
+        // فشفشه‌ها
+        for (let i = 0; i < 45; i++) {
+        const s = document.createElement('div');
+        s.className = 'spark';
+        s.style.left = Math.random() * 100 + 'vw';
+        s.style.animationDuration = 2.5 + Math.random() * 3 + 's';
+        s.style.animationDelay = Math.random() * 4 + 's';
+        document.body.appendChild(s);
+        }
+    </script>
+
+    </body>
+    </html>
